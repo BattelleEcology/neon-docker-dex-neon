@@ -1,0 +1,28 @@
+{{ template "header.html" . }}
+
+<div class="theme-panel">
+  <h2 class="theme-heading">Log in to {{ issuer }} </h2>
+  <div class="theme-col-reverse">
+    {{ range $c := .Connectors }}
+      {{ if $c.Type == 'microsoft' }}
+        <div class="theme-login-row">
+          <a href="{{ $c.URL }}" class="theme-a-primary" target="_self">
+            <button class="theme-button-primary">
+              Click to Log In
+            </button>
+          </a>
+        </div>
+      {{ else }}
+        <div class="theme-login-row">
+          <p class="theme-login-p">
+            The button above will log in using Microsoft Single Sign-On.
+            If you need an alternate method you can try 
+            <a href="{{ $c.URL }}" target="_self">Logging in with {{ $c.Name }}</a>.
+          </p>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+{{ template "footer.html" . }}
