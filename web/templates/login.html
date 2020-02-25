@@ -4,7 +4,7 @@
   <h2 class="theme-heading">Log in to {{ issuer }} </h2>
   <div class="theme-col-reverse">
     {{ range $c := .Connectors }}
-      {{ if eq $c.Type 'microsoft' }}
+      {{ if eq $c.Type "microsoft" }}
         <div class="theme-login-row">
           <a href="{{ $c.URL }}" class="theme-a-primary" target="_self">
             <button class="theme-button-primary">
