@@ -1,2 +1,2 @@
-FROM ghcr.io/dexidp/dex:v2.41.1
+FROM ghcr.io/dexidp/dex:v2.42.0
 COPY web /web-neon
